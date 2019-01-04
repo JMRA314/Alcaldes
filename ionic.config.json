@@ -1,0 +1,7 @@
+{
+  "name": "Alcaldes_v1",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

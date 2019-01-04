@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "886364774408",
+    "firebase_url": "https://alcaldesv1.firebaseio.com",
+    "project_id": "alcaldesv1",
+    "storage_bucket": "alcaldesv1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886364774408:android:ccee20991891bdc6",
+        "android_client_info": {
+          "package_name": "com.estrategas.alcaldes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "886364774408-qen7kibp35atkjlq0vkr0rm79um74p58.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAydmdF7Xsb-khNiRBspGMzNRwPnDwHjSg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

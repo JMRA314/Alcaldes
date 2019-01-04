@@ -1,0 +1,91 @@
+<!--
+  Generated template for the IncidenciaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color = "dark">
+    <ion-title>Registrar Incidencia</ion-title>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <form [formGroup]="formulario">
+        <ion-list>
+          <!--
+
+        
+            <ion-item>
+                 
+                <ion-label stacked><ion-icon name = "key"></ion-icon>{{ParametroRecibido.id}}</ion-label>
+             
+              </ion-item>   -->
+          <ion-item>
+            <ion-icon name="person" item-start></ion-icon>
+            
+            <ion-input formControlName="name" type="text" placeholder="Nombre del ciudadano"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="grid" item-start></ion-icon>
+            
+            <ion-input formControlName="cuenta" type="text" placeholder="# Cuenta(predial,agua)"></ion-input>
+          </ion-item>
+                    <ion-item>
+            <ion-icon name="call" item-start></ion-icon>
+          
+            <ion-input formControlName="telefono" type="tel" placeholder="Telefóno" maxlength="10"></ion-input>
+          </ion-item>
+               <ion-item>
+            <ion-icon name="mail" item-start></ion-icon>
+           
+            <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-icon name="arrow-dropdown-circle" item-start></ion-icon>
+            <ion-label>Tipo Incidencia</ion-label>
+            <ion-select [(ngModel)]="tipoincidencia" formControlName="tipoincidencia">
+              <ion-option value="1">Alumbrado público</ion-option>
+              <ion-option value="2">Seguridad</ion-option>
+              <ion-option value="3">Limpia</ion-option>
+              <ion-option value="4">Agua y drenaje</ion-option>
+              <ion-option value="6">Vialidad y pavimentos</ion-option>
+              <ion-option value="7">Obras en proceso</ion-option>
+              <ion-option value="8">Otros</ion-option>
+        
+            </ion-select>
+          </ion-item>
+          <ion-item>
+              
+              <ion-icon name="text" item-start></ion-icon>
+            
+              <ion-textarea #myInput id="Descripcion" rows="6" formControlName="Descripcion"
+               placeholder ="Descripción de la incidencia(mín 25)" maxlength="200" minlength="25" (keyup)="onKey($event)"></ion-textarea>
+             
+            </ion-item>
+          
+        </ion-list>
+        <ion-label><span>200/{{contador}}</span></ion-label>
+   
+        <div *ngIf ="validar1">
+          <button ion-button block  [disabled]="!formulario.valid" (click)="tomarFoto()">Tomar Foto</button>
+        </div>
+        <div *ngIf ="validar2">
+            <button ion-button block   (click)="salir()">Terminar</button>
+          </div>
+        
+      </form>
+    
+      <div>
+       <img  [src]="image" *ngIf="image" >
+     
+    </div>
+    
+
+</ion-content>
+

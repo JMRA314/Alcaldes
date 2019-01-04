@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar color = "dark">
+    <ion-title>
+   Servicios Municipales / {{plaza}}
+    </ion-title>
+    <ion-buttons right>
+        <button ion-button icon-only (click)="verIncidencias()">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      
+      </ion-buttons>
+ 
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <div class = "row">
+            <div class = "col">
+              <ion-item>
+         
+          <ion-label stacked>Latitud:</ion-label>
+          <ion-input disabled="true"  type="text" placeholder="latitud"  [(ngModel)]="latitud"></ion-input>
+        </ion-item> 
+  
+            </div>
+            <div class = "col">
+               <ion-item>
+         
+            <ion-label stacked>Longitud:</ion-label>
+            <ion-input disabled="true"  type="text" placeholder="longitud" [(ngModel)]="longitud"></ion-input>
+          </ion-item>
+  
+            </div>
+           
+        </div>
+       
+       
+  
+    </ion-list>
+ 
+
+  <div id="map"></div>
+  <ion-fab right bottom>
+    <button (click) = "agregar()" ion-fab color="dark"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  <!--
+<ion-fab left bottom>
+    <button  ion-fab color="dark" (click) = "cargar()"><ion-icon name="cloud-upload"></ion-icon></button>
+  </ion-fab>
+  -->
+  
+
+</ion-content>
+<ion-footer>Alcaldes Estrategas 2018</ion-footer>

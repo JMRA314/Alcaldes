@@ -1,0 +1,95 @@
+
+<ion-header>
+
+  <ion-navbar color ="dark">
+    <ion-title>Servicios Municipales/Historial</ion-title>
+    <ion-buttons right>
+   
+      <button ion-button icon-only (click)="subirSQL()">
+        <ion-icon name="cloud-upload"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+    <h2>Mis incidencias reportadas</h2>
+    <ion-list>
+     <ion-item-sliding *ngFor ="let item of incidence">
+      <ion-item>
+        <ion-thumbnail item-end>
+            
+            <img [src]="item.foto">
+         
+            </ion-thumbnail>
+            <div *ngIf='item.tipo==1'>
+             <p><strong>Alumbrado Público</strong></p>
+            </div>
+            <div *ngIf='item.tipo==2'>
+                <p><strong>Seguridad</strong></p>
+               </div>
+               <div *ngIf='item.tipo==3'>
+                  <p><strong>Limpieza</strong></p>
+                 </div>
+                 <div *ngIf='item.tipo==4'>
+                    <p><strong>Agua y drenaje</strong></p>
+                   </div>
+                   <div *ngIf='item.tipo==5'>
+                      <p><strong>Parques y jardines</strong></p>
+                     </div>
+                     <div *ngIf='item.tipo==6'>
+                        <p><strong>Vialidad y pavimentos</strong></p>
+                       </div>
+                       <div *ngIf='item.tipo==7'>
+                          <p><strong>Obras en proceso</strong></p>
+                         </div>
+                         <div *ngIf='item.tipo==8'>
+                            <p><strong>Otros</strong></p>
+                           </div>
+      
+         <p style ="word-wrap: break-word; white-space : normal; font-size: 14;" >{{item.observaciones}}</p>
+         <p>{{item.nombre}}</p>
+         <p>{{item.account}}</p>
+         <p>{{item.telefono}}</p>
+         <p>{{item.correo}}</p>
+         <p>{{item.fecha}}</p>
+           
+       <div *ngIf='item.cargado==1'>
+            <p style ="color : green"> <strong>Cargado al servidor</strong></p>
+         </div>
+         <div *ngIf='item.cargado == 0'>
+            <p style ="color :red"> <strong>Carga pendiente</strong></p>
+         </div>
+       
+        
+       </ion-item>
+       <ion-item-options side="right">
+          <div *ngIf='item.cargado == 0'>
+              <button ion-button color="dark" (click)= "editar(item)">
+                  <ion-icon name="create"></ion-icon>
+                  Editar
+                </button>
+                <button  ion-button color="danger" (click)="eliminar(item)">
+                    <ion-icon name="trash"></ion-icon>
+                    Eliminar
+                  </button>
+           </div>
+    
+
+   
+       </ion-item-options>
+       <ion-item-options side="left">
+          <div *ngIf='item.cargado == 0'>
+           <button  ion-button color="dark">
+             <ion-icon name="camera"></ion-icon>
+             Tomar foto
+           </button>
+          </div>
+         </ion-item-options>
+     </ion-item-sliding>
+   </ion-list>
+
+
+</ion-content>
